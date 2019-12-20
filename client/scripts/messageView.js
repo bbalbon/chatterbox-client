@@ -1,12 +1,18 @@
 var MessageView = {
+  renderMessage: _.template(
+    "<div class='chat'>" +
+      "<div class='username'>" +
+        "<%= username %>" +
+      "</div" +
+      "<div class='message'>" +
+        "<%= text %>" +
+      "</div" +
+    "</div>"
+  ),
 
-  render: _.template(`
-      <!--
-      <div class="chat">
-        <div class="username"></div>
-        <div></div>
-      </div>
-      -->
-    `)
-
+  renderRoom: _.template(
+    "<div class='room'>" +
+      "<%= room &>" +
+    "</div>"
+  )
 };

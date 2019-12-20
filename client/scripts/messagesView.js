@@ -3,9 +3,13 @@ var MessagesView = {
   $chats: $('#chats'),
 
   initialize: function() {
+    MessagesView.$chats.toggle();
   },
 
-  render: function() {
+  renderMessage: function(message) {
+    let result;
+    result = MessageView.renderMessage(message);
+    $('#chats').append(result);
   }
 
 };
