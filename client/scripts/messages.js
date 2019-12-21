@@ -1,4 +1,4 @@
-var Messages = {
-  
+var Messages = function (){
+
 
 };

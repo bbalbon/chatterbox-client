@@ -11,8 +11,13 @@ var FormView = {
     event.preventDefault();
     // on click
     //get input from text field
+    $('#message').val();
     //push text to server
+    Parse.create({'username': App.username, 'text':$('#message').val()}, function () {
+      MessagesView.handleRefresh();
+    });
     //refresh
+    $('#message').val('');
     console.log('click!');
   },
 

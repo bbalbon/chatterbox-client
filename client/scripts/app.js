@@ -4,16 +4,17 @@ var App = {
 
   username: 'anonymous',
 
+  roomname: 'lobby',
+
   initialize: function() {
     App.username = window.location.search.substr(10);
-
-    FormView.initialize();
-    RoomsView.initialize();
-    MessagesView.initialize();
 
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+    FormView.initialize();
+    MessagesView.initialize();
+    setTimeout(RoomsView.initialize, 500);
 
   },
 

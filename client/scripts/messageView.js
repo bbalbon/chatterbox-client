@@ -8,11 +8,5 @@ var MessageView = {
         "<%= text %>" +
       "</div>" +
     "</div>"
-  ),
-
-  renderRoom: _.template(
-    "<div class='room'>" +
-      "<%= room &>" +
-    "</div>"
   )
 };
