@@ -14,7 +14,7 @@ var App = {
     App.fetch(App.stopSpinner);
     FormView.initialize();
     MessagesView.initialize();
-    setTimeout(RoomsView.initialize, 500);
+    setTimeout(RoomsView.initialize, 250);
 
   },
 
