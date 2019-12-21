@@ -8,10 +8,10 @@ var RoomsView = {
     // get room names from server
     // append to room selector element
     RoomsView.$main.on('click', RoomsView.renderRoomInput());
-    RoomsView.renderRoom();
+    RoomsView.renderRoomList();
   },
 
-  renderRoom: function () {
+  renderRoomList: function () {
     // event.preventDefault();
     var duplicationCheck = [];
     var pulledDataAlias = MessagesView.pulledData[0];
@@ -19,17 +19,21 @@ var RoomsView = {
       if ((pulledDataAlias[i]['username']) && (pulledDataAlias[i]['text']) && (pulledDataAlias[i]['roomname'])) {
         if (duplicationCheck.indexOf(pulledDataAlias[i]['roomname']) === -1) {
           duplicationCheck.push(pulledDataAlias[i]['roomname']);
-          $('#rooms select').append(`<option id="${pulledDataAlias[i]['roomname']}">${pulledDataAlias[i]['roomname']}</option>`);
+          RoomsView.renderRoom(pulledDataAlias[i]['roomname']);
         }
       }
     }
     MessagesView.handleRefresh();
   },
 
-  // Need to rename above function ^ for test 
+  // Need to rename above function ^ for test
+  renderRoom: function (roomName) {
+    $('#rooms select').append(`<option id="${roomName}">${roomName}</option>`);
+  },
 
   renderRoomInput: function () {
     // take user input .val()
+
     // add to room list
   }
 
