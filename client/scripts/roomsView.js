@@ -4,6 +4,8 @@ var RoomsView = {
   $select: $('#rooms select'),
 
   initialize: function() {
+    // get room names from server
+    // append to room selector element
   },
 
   renderRoom: function(room) {
