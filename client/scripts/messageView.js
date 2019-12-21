@@ -7,6 +7,9 @@ var MessageView = {
       "<div class='message'>" +
         "<%= text %>" +
       "</div>" +
+      "<div class='roomname'>" +
+        "Room: <%= roomname %>" +
+      "</div>" +
     "</div>"
   )
 };

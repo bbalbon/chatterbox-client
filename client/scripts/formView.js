@@ -13,7 +13,7 @@ var FormView = {
     //get input from text field
     $('#message').val();
     //push text to server
-    Parse.create({'username': App.username, 'text':$('#message').val()}, function () {
+    Parse.create({'username': App.username, 'text': $('#message').val(), 'roomname': $('#rooms select').val()}, function () {
       MessagesView.handleRefresh();
     });
     //refresh

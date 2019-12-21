@@ -4,8 +4,6 @@ var App = {
 
   username: 'anonymous',
 
-  roomname: 'lobby',
-
   initialize: function() {
     App.username = window.location.search.substr(10);
 

@@ -7,6 +7,17 @@ var RoomsView = {
   initialize: function () {
     // get room names from server
     // append to room selector element
+    $('#rooms select').on('change', function () {
+      if ($('#rooms select').val() === 'All Messages') {
+        MessagesView.render();
+      } else {
+      RoomsView.renderSelectedRoom();
+      }
+    });
+    $('#roombutton').on('click', function () {
+      RoomsView.renderRoom($('#roomname').val());
+      $('#roomname').val('');
+    });
     RoomsView.$main.on('click', RoomsView.renderRoomInput());
     RoomsView.renderRoomList();
   },
@@ -29,6 +40,18 @@ var RoomsView = {
   // Need to rename above function ^ for test
   renderRoom: function (roomName) {
     $('#rooms select').append(`<option id="${roomName}">${roomName}</option>`);
+  },
+
+  renderSelectedRoom: function () {
+    App.startSpinner();
+    let selected = $('#rooms select').val();
+    $('#chats').html('');
+    for (let i = 0; i < MessagesView.pulledData[0].length; i++) {
+      if (MessagesView.pulledData[0][i]['username'] !== undefined && MessagesView.pulledData[0][i]['text'] !== undefined && MessagesView.pulledData[0][i]['roomname'] === selected) {
+        $('#chats').append(MessageView.renderMessage(MessagesView.pulledData[0][i]));
+      }
+    }
+    App.stopSpinner();
   },
 
   renderRoomInput: function () {
