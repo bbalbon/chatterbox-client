@@ -13,19 +13,25 @@ var App = {
 
     FormView.initialize();
     MessagesView.initialize();
-    setTimeout(RoomsView.initialize, 1100);
-    // Friends.addFriend();
+    setTimeout(RoomsView.initialize, 1000);
 
   },
 
+  // fetch: function(callback = ()=>{}) {
+  //   Parse.readAll((data) => {
+
+  //     MessagesView.pulledData = [];
+  //     MessagesView.pulledData.push(data.results);
+
+  //     callback();
+  //   });
+  // },
+
   fetch: function(callback = ()=>{}) {
-    Parse.readAll((data) => {
-      // examine the response from the server request:
-      console.log(data);
+    Parse.readAll(function (data) {
 
       MessagesView.pulledData = [];
       MessagesView.pulledData.push(data.results);
-
 
       callback();
     });

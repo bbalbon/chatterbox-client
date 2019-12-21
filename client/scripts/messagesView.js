@@ -1,9 +1,7 @@
 var MessagesView = {
 
   pulledData: [],
-
   $chats: $('#chats'),
-
   $main: $('#refresh'),
 
   initialize: function () {
@@ -12,8 +10,7 @@ var MessagesView = {
   },
 
   handleRefresh: function () {
-    App.fetch();
-    MessagesView.render();
+    App.fetch(MessagesView.render);
   },
 
   render: function () {

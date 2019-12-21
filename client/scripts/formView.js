@@ -11,13 +11,13 @@ var FormView = {
     event.preventDefault();
     // on click
     //get input from text field
+    App.startSpinner();
     $('#message').val();
     //push text to server
-    Parse.create({'username': App.username, 'text': $('#message').val(), 'roomname': $('#rooms select').val()}, function () {
-      MessagesView.handleRefresh();
-    });
-    //refresh
-    $('#message').val('');
+    Parse.create({'username': App.username, 'text': $('#message').val(), 'roomname': $('#rooms select').val()}, App.stopSpinner);
+
+    App.fetch(MessagesView.render);
+
   },
 
   setStatus: function(active) {

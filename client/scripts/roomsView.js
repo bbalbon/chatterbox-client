@@ -5,8 +5,7 @@ var RoomsView = {
   $main: $('#roombutton'),
 
   initialize: function () {
-    // get room names from server
-    // append to room selector element
+
     $('#rooms select').on('change', function () {
       if ($('#rooms select').val() === 'All Messages') {
         MessagesView.render();
@@ -18,12 +17,11 @@ var RoomsView = {
       RoomsView.renderRoom($('#roomname').val());
       $('#roomname').val('');
     });
-    RoomsView.$main.on('click', RoomsView.renderRoomInput());
     RoomsView.renderRoomList();
   },
 
   renderRoomList: function () {
-    // event.preventDefault();
+
     var duplicationCheck = [];
     var pulledDataAlias = MessagesView.pulledData[0];
     for (let i = 0; i < pulledDataAlias.length; i++) {
@@ -57,11 +55,4 @@ var RoomsView = {
     }
     App.stopSpinner();
   },
-
-  renderRoomInput: function () {
-    // take user input .val()
-
-    // add to room list
-  }
-
 };
