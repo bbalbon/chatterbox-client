@@ -1,8 +1,8 @@
 body {
-    background: #eee;
+    background: rgb(131, 175, 11);
     text-align: center;
     padding: 0 25px;
-    font-family: arial, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #main, #chats {
@@ -20,6 +20,7 @@ body {
     font-size: 35px;
     margin-bottom: 5px;
     padding: 5px;
+    text-align: center;
 }
 
 #main h1 span {
@@ -84,7 +85,33 @@ form input[type=text] {
 }
 
 .friend {
-    color: #fff;
-    background-color: #0090da;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #eee;
 }
 
+.username:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.username {
+    font-weight: 800;
+}
+
+button, .submit {
+    padding: 5px 5px 5px;
+    font-size: 15;
+    font-weight: bold;
+    border-radius: 100px;
+    cursor: pointer;
+    background-color: rgb(201, 201, 201);
+}
+
+#refresh {
+    margin-left: 40%;
+    padding: 10px 15px 10px;
+    font-size: 20;
+    background-color: lightblue;
+    box-shadow: 0 1px 0;
+}

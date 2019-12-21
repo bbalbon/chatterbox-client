@@ -10,9 +10,11 @@ var App = {
     // Fetch initial batch of messages
     App.startSpinner();
     App.fetch(App.stopSpinner);
+
     FormView.initialize();
     MessagesView.initialize();
-    setTimeout(RoomsView.initialize, 250);
+    setTimeout(RoomsView.initialize, 1100);
+    // Friends.addFriend();
 
   },
 

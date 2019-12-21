@@ -18,7 +18,6 @@ var FormView = {
     });
     //refresh
     $('#message').val('');
-    console.log('click!');
   },
 
   setStatus: function(active) {
