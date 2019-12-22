@@ -1,7 +1,7 @@
 var Friends = {
   friendList: [],
 
-  addFriend: function (username) {
+  toggleStatus: function (username) {
     if (Friends.friendList.indexOf(username) === -1) {
       Friends.friendList.push(username);
     }

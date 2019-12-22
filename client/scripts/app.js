@@ -9,31 +9,21 @@ var App = {
 
     // Fetch initial batch of messages
     App.startSpinner();
-    App.fetch(App.stopSpinner);
+    App.fetch(App.stopSpinner, RoomsView.initialize);
 
     FormView.initialize();
     MessagesView.initialize();
-    setTimeout(RoomsView.initialize, 1000);
 
   },
 
-  // fetch: function(callback = ()=>{}) {
-  //   Parse.readAll((data) => {
-
-  //     MessagesView.pulledData = [];
-  //     MessagesView.pulledData.push(data.results);
-
-  //     callback();
-  //   });
-  // },
-
-  fetch: function(callback = ()=>{}) {
+  fetch: function(callback = ()=>{}, callbacktwo = ()=>{}) {
     Parse.readAll(function (data) {
 
       MessagesView.pulledData = [];
       MessagesView.pulledData.push(data.results);
 
       callback();
+      callbacktwo();
     });
   },
 
